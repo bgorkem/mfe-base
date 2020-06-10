@@ -1,0 +1,29 @@
+{
+  "name": "@mfe-base/base",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MicroFront End baseline project",
+  "main": "index.js",
+  "scripts": {
+    "start": "lerna run start --parallel"
+  },
+  "repository": "git+https://github.com/bgorkem/mfe-base.git",
+  "keywords": [],
+  "author": "Bulent Gorkem <bgorkem@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bgorkem/mfe-base/issues"
+  },
+  "homepage": "https://github.com/bgorkem/mfe-base#readme",
+  "workspaces": [
+    "packages/shell",
+    "packages/app1",
+    "packages/app2"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.0",
+    "webpack": "5.0.0-beta.16",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

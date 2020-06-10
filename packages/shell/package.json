@@ -11,8 +11,6 @@
     "url": "git+https://github.com/bgorkem/mfe-base.git"
   },
   "scripts": {
-    "test": "jest",
-    "eslint": "eslint ./src",
     "build": "webpack",
     "start": "webpack-dev-server"
   },
@@ -20,24 +18,17 @@
     "url": "https://github.com/bgorkem/mfe-base/issues"
   },
   "dependencies": {
-    "@mfe-base/common": "^1.0.0",
-    "@types/react-router-dom": "^5.1.5",
     "react": "^16.13.1",
+    "react-dom":"^16.13.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.1.5",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
-    "@typescript-eslint/eslint-plugin": "^3.0.2",
-    "@typescript-eslint/parser": "^3.0.2",
-    "eslint-plugin-react": "^7.20.0",
-    "fork-ts-checker-notifier-webpack-plugin": "^1.0.0",
-    "fork-ts-checker-webpack-plugin": "^1.4.0",
     "html-webpack-plugin": "^4.3.0",
-    "jest": "^26.0.1",
-    "ts-loader": "^7.0.5",
-    "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
+    "webpack": "5.0.0-beta.16",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   }
 }

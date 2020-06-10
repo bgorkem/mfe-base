@@ -3,7 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import App1 from 'app1';
+const App1 = React.lazy(() => import('app1/Main'));
+const App2 = React.lazy(() => import('app2/Main'));
 
 const Nav = () => {
   return (
@@ -28,9 +29,6 @@ const Home = () => {
   return <div>Home</div>;
 };
 
-const App1 = () => <div>App1 will eb coming here</div>;
-const App2 = () => <div>App2 here</div>;
-
 const Shell = () => {
   return (
     <div>
@@ -40,14 +38,20 @@ const Shell = () => {
         <main>
           <Switch>
             <Route path="/app1">
-              <App1 />
+              <div>
+                <React.Suspense fallback="Loading ...">
+                  <App1 />
+                </React.Suspense>
+              </div>
             </Route>
             <Route path="/app2">
-              <App2 />
+              <div>
+                <React.Suspense fallback="Loading ...">
+                  <App2 />
+                </React.Suspense>
+              </div>
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/"></Route>
           </Switch>
         </main>
       </Router>
@@ -55,8 +59,4 @@ const Shell = () => {
   );
 };
 
-export default {
-  bootstrap: (): void => {
-    ReactDOM.render(<Shell />, document.querySelector('#root'));
-  },
-};
+ReactDOM.render(<Shell />, document.querySelector('#root'));

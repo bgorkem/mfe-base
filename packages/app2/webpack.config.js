@@ -3,15 +3,14 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 
 module.exports = {
-  entry: './src/Shell',
+  entry: './src/Main',
   mode: 'development',
   devServer: {
-    historyApiFallback: true,
     contentBase: path.join(__dirname, 'dist'),
-    port: 3001,
+    port: 3003,
   },
   output: {
-    publicPath: 'http://localhost:3001/',
+    publicPath: 'http://localhost:3003/',
   },
   module: {
     rules: [
@@ -28,19 +27,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-
   plugins: [
     new ModuleFederationPlugin({
-      name: 'shell',
-      library: { type: 'var', name: 'shell' },
-      remotes: {
-        app1: 'app1',
-        app2: 'app2',
+      name: 'app2',
+      library: { type: 'var', name: 'app2' },
+      filename: 'remoteEntry.js',
+      exposes: {
+        Main: './src/Main',
       },
       shared: ['react', 'react-dom'],
-    }),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
     }),
   ],
 };
