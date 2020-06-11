@@ -7,6 +7,10 @@ A Demo project exploring options of dynamic loading of micro-frontends on the sh
 
 ` yarn run start `
 
+Open browser to
+
+`http://localhost:3001`
+
 this will currently only run in dev mode on webpack-dev-server.
 
 Production bundling will be added later on.
