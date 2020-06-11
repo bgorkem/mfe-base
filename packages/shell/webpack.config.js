@@ -11,6 +11,7 @@ module.exports = {
     port: 3001,
   },
   output: {
+    filename: 'shell.js',
     publicPath: 'http://localhost:3001/',
   },
   module: {
@@ -33,10 +34,6 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'shell',
       library: { type: 'var', name: 'shell' },
-      remotes: {
-        app1: 'app1',
-        app2: 'app2',
-      },
       shared: ['react', 'react-dom'],
     }),
     new HtmlWebpackPlugin({

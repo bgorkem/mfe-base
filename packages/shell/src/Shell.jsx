@@ -2,9 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-const App1 = React.lazy(() => import('app1/Main'));
-const App2 = React.lazy(() => import('app2/Main'));
+import RemoteReactComponent from './RemoteReactComponent';
 
 const Nav = () => {
   return (
@@ -33,24 +31,23 @@ const Shell = () => {
   return (
     <div>
       <h2>MicroFE Shell</h2>
+
       <Router>
         <Nav />
         <main>
           <Switch>
-            <Route path="/app1">
-              <div>
-                <React.Suspense fallback="Loading ...">
-                  <App1 />
-                </React.Suspense>
-              </div>
-            </Route>
-            <Route path="/app2">
-              <div>
-                <React.Suspense fallback="Loading ...">
-                  <App2 />
-                </React.Suspense>
-              </div>
-            </Route>
+            <Route
+              path="/app1"
+              render={() => (
+                <RemoteReactComponent url={`http://localhost:3002/remoteEntry.js`} module="Main" scope="app1scope" />
+              )}
+            ></Route>
+            <Route
+              path="/app2"
+              render={() => (
+                <RemoteReactComponent url={`http://localhost:3003/remoteEntry.js`} module="Main" scope="app2scope" />
+              )}
+            ></Route>
             <Route path="/"></Route>
           </Switch>
         </main>
