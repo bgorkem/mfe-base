@@ -1,4 +1,4 @@
-# MicroFront End Baseline Project
+# Micro FrontEnds Baseline Project
 
 A Demo project exploring options of dynamic loading of micro-frontends on the shell
 
