@@ -2,17 +2,27 @@
   "name": "mfe-base",
   "version": "1.0.0",
   "main": "index.js",
-  "private":"true",
+  "private": "true",
   "repository": "https://github.com/bgorkem/mfe-base.git",
   "author": "Bulent Gorkem <bgorkem@hotmail.com>",
   "license": "MIT",
-  "workspaces": ["packages/shell", "packages/app1"],
+  "workspaces": [
+    "packages/shell",
+    "packages/app1"
+  ],
+
+  "scripts": {
+    "start": "lerna run start --parallel",
+    "build": "lerna run build --parallel"
+  },
+
   "devDependencies": {
-    "html-webpack-plugin": "^4.3.0",
-    "webpack": "^4.43.0",
-    "webpack-dev-server": "^3.11.0",
     "@babel/core": "7.9.6",
     "@babel/preset-react": "7.9.4",
-    "babel-loader": "8.1.0"
+    "babel-loader": "8.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "lerna": "^3.22.1",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
