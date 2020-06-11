@@ -5,7 +5,6 @@
   "author": "Bulent Gorkem <bgorkem@hotmail.com>",
   "homepage": "https://github.com/bgorkem/mfe-base/tree/master/packages/shell#readme",
   "license": "ISC",
-  "main": "lib/shell.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bgorkem/mfe-base.git"
@@ -18,10 +17,9 @@
     "url": "https://github.com/bgorkem/mfe-base/issues"
   },
   "dependencies": {
-    "@types/react-router-dom": "^5.1.5",
     "react": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "webpack-cli": "^3.3.11"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
@@ -29,6 +27,7 @@
     "babel-loader": "8.1.0",
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   }
 }

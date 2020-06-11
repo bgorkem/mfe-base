@@ -1,7 +1,6 @@
 {
   "name": "mfe-base",
   "version": "1.0.0",
-  "main": "index.js",
   "private": "true",
   "repository": "https://github.com/bgorkem/mfe-base.git",
   "author": "Bulent Gorkem <bgorkem@hotmail.com>",
