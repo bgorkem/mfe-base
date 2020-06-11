@@ -4,17 +4,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/Shell.jsx',
+  entry: './src/App.jsx',
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
-    port: 3001,
+    port: 3002,
     inline: false,
     hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': 'http://localhost:3001',
+      'Access-Control-Allow-Credentials': 'true',
+    },
   },
   module: {
     rules: [
-      { parser: { system: false } },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
@@ -28,20 +31,14 @@ module.exports = {
   externals: {
     react: 'react',
     'react-dom': 'react-dom',
-    app1: 'app1',
+    shell: 'shell',
   },
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   output: {
-    filename: 'shell-bundle.js',
+    filename: 'app1-bundle.js',
     libraryTarget: 'system',
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.jsx', '.ts', '.js'],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      inject: false,
-    }),
-  ],
 };

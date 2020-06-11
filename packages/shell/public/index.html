@@ -9,18 +9,16 @@
           "imports": {
             "react": "//cdn.jsdelivr.net/npm/@esm-bundle/react/system/react.development.js",
             "react-dom": "//cdn.jsdelivr.net/npm/@esm-bundle/react-dom/system/react-dom.development.js",
-            "shell": "./shell-bundle.js",
-            "app1": "./app1-bundle.js"
+            "shell": "http://localhost:3001/shell-bundle.js",
+            "app1": "http://localhost:3002/app1-bundle.js"
           }
         }
       </script>
       <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.min.js"></script>
 </head>
 <body>
-    <div>Welcome to MFE SystemJS Base!!</div>
 
-    <script type="systemjs-module" src="./main.js">
-
+    <script type="systemjs-module" src="./shell-bundle.js">
     </script>
     <div id="root"></div>
 </body>

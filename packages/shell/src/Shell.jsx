@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import App1 from 'app1';
+const App1 = React.lazy(() => System.import(/*webpackIgnore: true*/ 'app1'));
 
 const Nav = () => {
   return (
@@ -16,9 +16,6 @@ const Nav = () => {
         <li>
           <Link to="/app1">App 1</Link>
         </li>
-        <li>
-          <Link to="/app2">App 2</Link>
-        </li>
       </ul>
     </nav>
   );
@@ -27,9 +24,6 @@ const Nav = () => {
 const Home = () => {
   return <div>Home</div>;
 };
-
-const App1 = () => <div>App1 will eb coming here</div>;
-const App2 = () => <div>App2 here</div>;
 
 const Shell = () => {
   return (
@@ -40,11 +34,11 @@ const Shell = () => {
         <main>
           <Switch>
             <Route path="/app1">
-              <App1 />
+              <React.Suspense fallback="loading">
+                <App1 />
+              </React.Suspense>
             </Route>
-            <Route path="/app2">
-              <App2 />
-            </Route>
+
             <Route path="/">
               <Home />
             </Route>
@@ -55,8 +49,6 @@ const Shell = () => {
   );
 };
 
-export default {
-  bootstrap: (): void => {
-    ReactDOM.render(<Shell />, document.querySelector('#root'));
-  },
-};
+ReactDOM.render(<Shell />, document.querySelector('#root'));
+
+export const add = (a, b) => a + b;
