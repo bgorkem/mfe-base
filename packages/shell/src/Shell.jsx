@@ -35,21 +35,19 @@ const Shell = () => {
       <Router>
         <Nav />
         <main>
-          <Switch>
-            <Route
-              path="/app1"
-              render={() => (
-                <RemoteReactComponent url={`http://localhost:3002/app1-bundle.js`} module="Main" scope="app1scope" />
-              )}
-            ></Route>
-            <Route
-              path="/app2"
-              render={() => (
-                <RemoteReactComponent url={`http://localhost:3003/app2-bundle.js`} module="Main" scope="app2scope" />
-              )}
-            ></Route>
-            <Route path="/"></Route>
-          </Switch>
+          <Route
+            path="/app1"
+            render={() => (
+              <RemoteReactComponent url={`http://localhost:3002/app1-bundle.js`} module="Main" scope="app1scope" />
+            )}
+          ></Route>
+          <Route
+            path="/app2"
+            render={() => (
+              <RemoteReactComponent url={`http://localhost:3003/app2-bundle.js`} module="Main" scope="app2scope" />
+            )}
+          ></Route>
+          <Route path="/"></Route>
         </main>
       </Router>
     </div>
