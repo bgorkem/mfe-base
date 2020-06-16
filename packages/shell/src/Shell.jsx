@@ -39,13 +39,13 @@ const Shell = () => {
             <Route
               path="/app1"
               render={() => (
-                <RemoteReactComponent url={`http://localhost:3002/remoteEntry.js`} module="Main" scope="app1scope" />
+                <RemoteReactComponent url={`http://localhost:3002/app1-bundle.js`} module="Main" scope="app1scope" />
               )}
             ></Route>
             <Route
               path="/app2"
               render={() => (
-                <RemoteReactComponent url={`http://localhost:3003/remoteEntry.js`} module="Main" scope="app2scope" />
+                <RemoteReactComponent url={`http://localhost:3003/app2-bundle.js`} module="Main" scope="app2scope" />
               )}
             ></Route>
             <Route path="/"></Route>

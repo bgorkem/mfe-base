@@ -31,7 +31,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app1name',
       library: { type: 'var', name: 'app1scope' },
-      filename: 'remoteEntry.js',
+      filename: 'app1-bundle.js',
       exposes: {
         Main: './src/Main.jsx',
       },
