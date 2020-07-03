@@ -1,9 +1,17 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-const App1 = React.lazy(() => System.import(/*webpackIgnore: true*/ 'app1'));
+const App1 = React.lazy(() => {
+  console.log('lazy loading app1 ... wait for 5 sec');
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      console.log('lazy loaded app1 ... after 5 sec');
+      res(System.import('app1'));
+    }, 5000);
+  });
+});
 
 const Nav = () => {
   return (
@@ -25,6 +33,20 @@ const Home = () => {
   return <div>Home</div>;
 };
 
+const Fallback = () => {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    let timeoutId = setTimeout(() => setSeconds(seconds + 1), 1000);
+    return () => clearTimeout(timeoutId);
+  }, [seconds]);
+
+  return (
+    <React.Fragment>
+      <div> Slow Loading for {seconds} </div>
+    </React.Fragment>
+  );
+};
+
 const Shell = () => {
   return (
     <div>
@@ -34,7 +56,7 @@ const Shell = () => {
         <main>
           <Switch>
             <Route path="/app1">
-              <React.Suspense fallback="loading">
+              <React.Suspense fallback={<Fallback />}>
                 <App1 />
               </React.Suspense>
             </Route>
