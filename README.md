@@ -92,3 +92,15 @@ The way to configure in webpack
     libraryTarget: 'system',
   },
 ```
+
+
+
+## Shared State
+
+You can use
+
+* redux
+* react-redux
+* [svelte-redux-connect](https://linguinecode.com/post/how-to-add-redux-to-svelte)
+
+libraries to utilise a shared state management in the shell

@@ -1,5 +1,6 @@
 import React from 'react';
 import LoadingPlaceholder from './LoadingPlaceholder';
+
 export default ({ app, delay = 1000 }) => {
   const Component = React.lazy(() => {
     return new Promise((res) => {
