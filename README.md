@@ -39,29 +39,30 @@ Webpack-dev-server compiles each app as SystemJS libraries and starts webservers
 ### Uses
 
 * SystemJS - feat/systemjs-modules
-* Lerna / Yarn workspaces
+* Lerna / [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
 * Webpack 5 Module Federation - feat/fed-modules feat/fed-modules-remote-component
 * SingleSPA
 
 ### ESM Modules?
-Is the present / future. Most browsers natively support nowadays. This works in a browser console.
+
+Is the present and the future. Most browsers natively support loading ESM modules nowadays. This below works in a browser console.
 
 ```
 const React = await import('https://cdn.jsdelivr.net/npm/@esm-bundle/react/esm/react.production.min.js');
 
 ```
 
+However, most libraries are not published in ESM modules format, lodash, react ...
 
-Most libraries are not in ESM modules format, lodash, react ...
 Webpack takes care of CommonJS format to make it work with  import /export syntax in browsers.
-Webpack 5 may provide bundling in ESM format soon
 
-https://webpack.js.org/configuration/experiments/#root
+Webpack 5 may provide bundling in ESM format [soon](https://webpack.js.org/configuration/experiments/#root)
+
 
 ### Why can i not use native ESM Modules?
+On every module you'd have to pass the absolute path of Import CDN Url 😠
 
-On every module you'd have to pass the absolute path of Import CDN Url,
-ESM native import map could solve this at the top of the home page
+ESM native importmap feature could solve this at the top of the home page
 
 ```
 <script type="importmap">
@@ -75,7 +76,11 @@ ESM native import map could solve this at the top of the home page
 </script>
 ```
 
-Not all browsers support import maps though. Watch this for justification of SystemJS
+Not all browsers support import maps though. 😕
+
+So comes SystemJS to the rescue
+
+Watch this for justification of SystemJS
 https://www.youtube.com/watch?v=AmdKF2UhFzw
 
 ### SystemJS - feat/systemjs-modules
