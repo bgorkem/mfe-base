@@ -4,13 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/Shell.jsx',
+  entry: './src/index.js',
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
     port: 3001,
     inline: false,
     hot: true,
+    writeToDisk: true,
   },
   module: {
     rules: [

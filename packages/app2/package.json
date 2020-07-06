@@ -1,0 +1,13 @@
+{
+  "name": "app2",
+  "version": "1.0.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "svelte": "^3.23.2",
+    "svelte-loader": "^2.13.6"
+  }
+}
