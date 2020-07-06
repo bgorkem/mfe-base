@@ -7,7 +7,9 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "redux": "^4.0.5",
     "svelte": "^3.23.2",
-    "svelte-loader": "^2.13.6"
+    "svelte-loader": "^2.13.6",
+    "svelte-redux-connect": "^1.1.8"
   }
 }
