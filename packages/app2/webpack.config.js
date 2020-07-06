@@ -4,11 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/App.jsx',
+  entry: './src/App.svelte',
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
-    port: 3002,
+    port: 3003,
     inline: false,
     hot: true,
     writeToDisk: true,
@@ -20,26 +20,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
+        test: /\.(svelte)$/,
         exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react'],
+        use: {
+          loader: 'svelte-loader',
+          options: {
+            externalDependencies: true,
+          },
         },
       },
     ],
   },
   externals: {
-    react: 'react',
-    'react-dom': 'react-dom',
     shell: 'shell',
   },
   devtool: 'source-map',
   output: {
-    filename: 'app1-bundle.js',
+    filename: 'app2-bundle.js',
     libraryTarget: 'system',
   },
   resolve: {
-    extensions: ['.jsx', '.ts', '.js'],
+    extensions: ['.svelte', '.js', '.json'],
   },
 };

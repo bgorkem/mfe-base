@@ -1,5 +1,13 @@
 import React from 'react';
 
-import { add } from 'shell';
+import { lib } from 'shell';
 
-export default () => <div>This is app1, no kidding! {add(2, 3)}</div>;
+const onClick = () => {};
+export default () => (
+  <div style={{ border: 'solid 1px gray', margin: '5px', padding: '5px' }}>
+    <h3>React App</h3>
+    <p>User information coming from Shell</p>
+    <p>User: {lib.user.username}</p>
+    <button onClick={onClick}>React action</button>
+  </div>
+);
