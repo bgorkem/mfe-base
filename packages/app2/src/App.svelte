@@ -1,10 +1,10 @@
 <script>
   import { lib } from "shell";
+  import { Provider } from "svelte-redux-connect";
+  import Preferences from "./Preferences.js";
+  import Profile from "./Profile.svelte";
 
-  let username = lib.user.username;
-  const onButtonClick = () => {
-    console.log("button clicked");
-  };
+  const store = lib.state.store;
 </script>
 
 <style>
@@ -15,9 +15,10 @@
   }
 </style>
 
-<div class="container">
-  <h3>Svelte App</h3>
-  <p>User information coming from shell</p>
-  <p>Username: {username}</p>
-  <button on:click={onButtonClick}>Svelte Button</button>
-</div>
+<Provider {store}>
+  <div class="container">
+    <h3>Svelte App</h3>
+    <Preferences />
+    <Profile />
+  </div>
+</Provider>
