@@ -21,7 +21,6 @@ module.exports = {
     rules: [
       {
         test: /\.(svelte)$/,
-        exclude: /node_modules/,
         use: {
           loader: 'svelte-loader',
           options: {
@@ -40,6 +39,6 @@ module.exports = {
     libraryTarget: 'system',
   },
   resolve: {
-    extensions: ['.svelte', '.js', '.json'],
+    extensions: ['*', '.mjs', '.svelte', '.js', '.json'],
   },
 };
