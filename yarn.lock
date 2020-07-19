@@ -6789,6 +6789,21 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
+single-spa-react@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/single-spa-react/-/single-spa-react-3.0.0.tgz#449e763360ea657c8421efb2151690a8ccf37c46"
+  integrity sha512-vwLoz04oyizZw7mjfBbmr7vsWBZjgT0qlMLB3scfR5y676RRF7pzvsCq0MxKw+Cc74UUAYjd/nVtLMzfON47ww==
+
+single-spa-svelte@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/single-spa-svelte/-/single-spa-svelte-2.0.0.tgz#a05fc50f9bce7cf32cfe20854181d6b4c5a964cc"
+  integrity sha512-8qGMSl69yQDGupw3zSNiLW7iHEyUjnwfTlUSXU8L0MXj942HaEtUkaJsYzUShrDFkxO1HzjxGB0l7GNiIo9HnQ==
+
+single-spa@^5.5.5:
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.5.5.tgz#77a947516874d50b1e1a43aa6c316b550605d4fb"
+  integrity sha512-10YHGwETkAT6k9dkOTClig2h/R6yA5qvLdvk6i7Z4/PK8A2iD/pVvYKIud0aZVA69OzO1lrQOHB4VgT4t8/kXw==
+
 slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"

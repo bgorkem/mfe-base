@@ -41,7 +41,7 @@ Webpack-dev-server compiles each app as SystemJS libraries and starts webservers
 * SystemJS - feat/systemjs-modules
 * Lerna / [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
 * Webpack 5 Module Federation - feat/fed-modules feat/fed-modules-remote-component
-* SingleSPA
+* SingleSPA - feat/systemjs-modules-singlespa
 
 ### ESM Modules?
 
@@ -59,7 +59,7 @@ Webpack takes care of CommonJS format to make it work with  import /export synta
 Webpack 5 may provide bundling in ESM format [soon](https://webpack.js.org/configuration/experiments/#root)
 
 
-### Why can i not use native ESM Modules?
+### Why can I not use native ESM Modules?
 On every module you'd have to pass the absolute path of Import CDN Url 😠
 
 ESM native importmap feature could solve this at the top of the home page
@@ -76,7 +76,7 @@ ESM native importmap feature could solve this at the top of the home page
 </script>
 ```
 
-Not all browsers support import maps though. 😕
+Not all browsers support importmaps though. 😕
 
 So comes SystemJS to the rescue
 

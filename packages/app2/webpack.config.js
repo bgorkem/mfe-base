@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/App.svelte',
+  entry: './src/app.js',
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),

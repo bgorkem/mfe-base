@@ -10,7 +10,34 @@ import { Nav } from './Nav';
 import SvelteSystemLoader from './SvelteSystemLoader';
 import Preferences from './Preferences';
 
+let counter = 0;
+
+import { registerApplication, start } from 'single-spa';
+registerApplication({
+  name: 'app1',
+  app: () => System.import('app1'),
+  activeWhen: '/app1',
+  customProps: {
+    rootComponent: TestComponent,
+    domElement: document.getElementById('root2'),
+    appId: ++counter,
+  },
+});
+
+registerApplication({
+  name: 'app2',
+  app: () => System.import('app2'),
+  activeWhen: '/app2',
+  customProps: { domElement: document.getElementById('root2'), appId: ++counter },
+});
+
+start();
+
 const store = createStore();
+
+function TestComponent() {
+  return <div>Test here</div>;
+}
 
 export default () => {
   return (
@@ -21,22 +48,14 @@ export default () => {
           <Nav />
           <Preferences />
           <main>
-            <Switch>
-              <Route path="/app1">
-                <ReactSystemLoader app="app1" delay={100} />
-              </Route>
-
-              <Route path="/app2">
-                <SvelteSystemLoader app="app2" />
-              </Route>
-
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
+            <div>Single SPA content will be here soon</div>
           </main>
         </Router>
       </Provider>
     </div>
   );
 };
+
+window.addEventListener('single-spa:before-app-change', (evt) => {
+  console.log('single-spa is about to mount/unmount applications!', evt.detail);
+});

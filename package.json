@@ -10,12 +10,10 @@
     "packages/app1",
     "packages/app2"
   ],
-
   "scripts": {
     "start": "lerna run start --parallel",
     "build": "lerna run build --parallel"
   },
-
   "devDependencies": {
     "lerna": "^3.22.1"
   }
