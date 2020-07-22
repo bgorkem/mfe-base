@@ -16,6 +16,10 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "single-spa": "^5.5.5",
+    "single-spa-react": "^3.0.0"
   }
 }
