@@ -40,7 +40,7 @@ Webpack-dev-server compiles each app as SystemJS libraries and starts webservers
 
 * SystemJS - [feat/systemjs-modules](https://github.com/bgorkem/mfe-base/tree/feat/systemjs-modules)
 * Lerna / [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
-* Webpack 5 Module Federation - [feat/fed-modules] (https://github.com/bgorkem/mfe-base/tree/feat/fed-modules)
+* Webpack 5 Module Federation - [feat/fed-modules](https://github.com/bgorkem/mfe-base/tree/feat/fed-modules)
 * Remote component loader - [feat/fed-modules-remote-component](https://github.com/bgorkem/mfe-base/tree/feat/fed-modules-remote-component)
 * SingleSPA - [feat/systemjs-modules-singlespa](https://github.com/bgorkem/mfe-base/tree/feat/ystemjs-modules-singlespa)
 
