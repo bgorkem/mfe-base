@@ -20,7 +20,7 @@ Production bundling could be added later on, by deploying prod builds into priva
 
 Each app is implemented in a monorepo, along with shell as the host
 
-Shell has import-map reference to each app bundle
+Shell has import-map module reference to each app bundle
 
 Each app is hosted on a sub path (/app1, /app2) using react-router-dom
 
@@ -36,12 +36,13 @@ Webpack-dev-server compiles each app as SystemJS libraries and starts webservers
 
 
 
-### Uses
+### Features
 
-* SystemJS - feat/systemjs-modules
+* SystemJS - [feat/systemjs-modules](https://github.com/bgorkem/mfe-base/tree/feat/systemjs-modules)
 * Lerna / [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
-* Webpack 5 Module Federation - feat/fed-modules feat/fed-modules-remote-component
-* SingleSPA - feat/systemjs-modules-singlespa
+* Webpack 5 Module Federation - [feat/fed-modules] (https://github.com/bgorkem/mfe-base/tree/feat/fed-modules)
+* Remote component loader - [feat/fed-modules-remote-component](https://github.com/bgorkem/mfe-base/tree/feat/fed-modules-remote-component)
+* SingleSPA - [feat/systemjs-modules-singlespa](https://github.com/bgorkem/mfe-base/tree/feat/ystemjs-modules-singlespa)
 
 ### ESM Modules?
 
