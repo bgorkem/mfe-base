@@ -1,0 +1,24 @@
+{
+  "name": "@mfe-base/lib",
+  "version": "1.0.0",
+  "description": "Library module to be shared across",
+  "author": "Bulent Gorkem <bgorkem@hotmail.com>",
+  "homepage": "https://github.com/bgorkem/mfe-base/tree/master/packages/lib#readme",
+  "license": "ISC",
+  "main": "index.js",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgorkem/mfe-base.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+
+  "devDependencies": {
+    "webpack": "5.0.0-beta.16",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

@@ -5,6 +5,8 @@ Branch: Federated modules with on demand loading..
 Feature: Remote React Component wraps the lazy loaded component using Dynamic Script
 to load only on demand...
 
+Feature: Load the shared lib via remotes in app1..
+
 Micro FrontEnd example using  SystemJS, Lerna, Typescript, React, Vue,
 
 MonoRepo

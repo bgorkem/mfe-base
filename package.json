@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "lerna run start --parallel"
+
   },
   "repository": "git+https://github.com/bgorkem/mfe-base.git",
   "keywords": [],
@@ -18,7 +19,8 @@
   "workspaces": [
     "packages/shell",
     "packages/app1",
-    "packages/app2"
+    "packages/app2",
+    "packages/lib"
   ],
   "devDependencies": {
     "lerna": "^3.22.0",

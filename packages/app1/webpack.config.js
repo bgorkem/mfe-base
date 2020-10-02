@@ -32,6 +32,9 @@ module.exports = {
       name: 'app1name',
       library: { type: 'var', name: 'app1scope' },
       filename: 'app1-bundle.js',
+      remotes: {
+        lib: 'lib',
+      },
       exposes: {
         Main: './src/Main.jsx',
       },
