@@ -4,11 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/app.js',
+  entry: './foo.js',
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
-    port: 3002,
+    port: 3004,
     inline: false,
     hot: true,
     writeToDisk: true,
@@ -17,30 +17,14 @@ module.exports = {
       'Access-Control-Allow-Credentials': 'true',
     },
   },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react'],
-        },
-      },
-    ],
-  },
-  externals: {
-    react: 'react',
-    'react-dom': 'react-dom',
-    shell: 'shell',
-    'amd-lib': 'amd-lib',
-  },
+
   devtool: 'source-map',
   output: {
-    filename: 'app1-bundle.js',
-    libraryTarget: 'system',
+    filename: 'amd-lib-bundle.js',
+    library: 'amd-lib',
+    libraryTarget: 'amd',
   },
   resolve: {
-    extensions: ['.jsx', '.ts', '.js'],
+    extensions: ['.js'],
   },
 };

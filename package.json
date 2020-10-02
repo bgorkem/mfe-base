@@ -8,9 +8,11 @@
   "workspaces": [
     "packages/shell",
     "packages/app1",
-    "packages/app2"
+    "packages/app2",
+    "packages/amd-lib"
   ],
   "scripts": {
+    "clean": "lerna clean && rm -rf ./node_modules",
     "start": "lerna run start --parallel",
     "build": "lerna run build --parallel"
   },
