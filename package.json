@@ -9,7 +9,7 @@
     "packages/shell",
     "packages/app1",
     "packages/app2",
-    "packages/amd-lib"
+    "packages/workspaces"
   ],
   "scripts": {
     "clean": "lerna clean && rm -rf ./node_modules",

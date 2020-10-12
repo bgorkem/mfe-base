@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppComponent from './App.jsx';
+import Workspaces from './components/Workspaces.jsx';
 
 // Note that SingleSpaContext is a react@16.3 (if available) context that provides the singleSpa props
 import singleSpaReact, { SingleSpaContext } from 'single-spa-react';
 const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: AppComponent,
+  rootComponent: Workspaces,
   errorBoundary(err, info, props) {
     // https://reactjs.org/docs/error-boundaries.html
     return <div>This renders when a catastrophic error occurs</div>;

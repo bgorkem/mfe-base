@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './foo.js',
+  entry: './src/index.js',
+  output: {
+    filename: 'workspaces-bundle.js',
+    libraryTarget: 'system',
+  },
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
@@ -17,14 +21,27 @@ module.exports = {
       'Access-Control-Allow-Credentials': 'true',
     },
   },
-
-  devtool: 'source-map',
-  output: {
-    filename: 'amd-lib-bundle.js',
-    library: 'amd-lib',
-    libraryTarget: 'amd',
+  module: {
+    rules: [
+      { parser: { system: false } },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: ['@babel/preset-react'],
+        },
+      },
+    ],
   },
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
+    app1: 'app1',
+  },
+  devtool: 'source-map',
+
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.jsx', '.js'],
   },
 };
