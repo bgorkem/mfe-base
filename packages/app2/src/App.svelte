@@ -1,12 +1,5 @@
 <script>
-  import { lib } from "shell";
-  import { Provider } from "svelte-redux-connect";
-  import Preferences from "./Preferences.js";
-  import Profile from "./Profile.svelte";
-
   export let appId;
-
-  const store = lib.state.store;
 </script>
 
 <style>
@@ -17,10 +10,6 @@
   }
 </style>
 
-<Provider {store}>
-  <div class="container">
-    <h3>Svelte App {appId} </h3>
-    <Preferences />
-    <Profile />
-  </div>
-</Provider>
+<div class="container">
+  <h3>Svelte App {appId}</h3>
+</div>

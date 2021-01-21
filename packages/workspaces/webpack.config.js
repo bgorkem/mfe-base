@@ -4,11 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/app.js',
+  entry: './src/index.js',
+  output: {
+    filename: 'workspaces-bundle.js',
+    libraryTarget: 'system',
+  },
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
-    port: 3002,
+    port: 3004,
     inline: false,
     hot: true,
     writeToDisk: true,
@@ -19,6 +23,7 @@ module.exports = {
   },
   module: {
     rules: [
+      { parser: { system: false } },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
@@ -32,15 +37,11 @@ module.exports = {
   externals: {
     react: 'react',
     'react-dom': 'react-dom',
-    shell: 'shell',
-    'amd-lib': 'amd-lib',
+    app1: 'app1',
   },
   devtool: 'source-map',
-  output: {
-    filename: 'app1-bundle.js',
-    libraryTarget: 'system',
-  },
+
   resolve: {
-    extensions: ['.jsx', '.ts', '.js'],
+    extensions: ['.jsx', '.js'],
   },
 };
