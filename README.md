@@ -9,7 +9,7 @@ A Demo project exploring options of dynamic loading of micro-frontends on the sh
 
 Open browser to
 
-`http://localhost:3001`
+`http://localhost:3001/workspaces`
 
 this will currently only run in dev mode on webpack-dev-server.
 
